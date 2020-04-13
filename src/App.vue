@@ -1,6 +1,12 @@
+<!--
+ * @Author: Sule
+ * @Date: 2020-04-13 14:12:11
+ * @LastEditors: Sule
+ * @LastEditTime: 2020-04-13 14:42:49
+ * @Description:
+ -->
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <router-view/>
   </div>
 </template>
