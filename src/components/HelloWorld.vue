@@ -2,7 +2,7 @@
  * @Author: Sule
  * @Date: 2020-04-13 14:12:11
  * @LastEditors: Sule
- * @LastEditTime: 2020-04-13 17:31:26
+ * @LastEditTime: 2020-04-13 18:21:03
  * @Description:
  -->
 <template>
@@ -41,63 +41,63 @@ export default {
           name: '币海APP',
           imgs: [
             {
-              url: require('@/assets/imgs/bh/登陆.png'),
+              url: require('../../static/imgs/bh/登陆.png'),
               des: '登陆'
             },
             {
-              url: require('@/assets/imgs/bh/币圈黑洞-详情.png'),
+              url: require('../../static/imgs/bh/币圈黑洞-详情.png'),
               des: '币圈黑洞-详情'
             },
             {
-              url: require('@/assets/imgs/bh/创建社区.png'),
+              url: require('../../static/imgs/bh/创建社区.png'),
               des: '创建社区'
             },
             {
-              url: require('@/assets/imgs/bh/发布动态.png'),
+              url: require('../../static/imgs/bh/发布动态.png'),
               des: '发布动态'
             },
             {
-              url: require('@/assets/imgs/bh/发布黑洞.png'),
+              url: require('../../static/imgs/bh/发布黑洞.png'),
               des: '发布黑洞'
             },
             {
-              url: require('@/assets/imgs/bh/签到-1.png'),
+              url: require('../../static/imgs/bh/签到-1.png'),
               des: '签到-1'
             },
             {
-              url: require('@/assets/imgs/bh/首页-1.png'),
+              url: require('../../static/imgs/bh/首页-1.png'),
               des: '首页-1'
             },
             {
-              url: require('@/assets/imgs/bh/我的-设置.png'),
+              url: require('../../static/imgs/bh/我的-设置.png'),
               des: '我的-设置'
             },
             {
-              url: require('@/assets/imgs/bh/我的-使用帮助.png'),
+              url: require('../../static/imgs/bh/我的-使用帮助.png'),
               des: '我的-使用帮助'
             },
             {
-              url: require('@/assets/imgs/bh/我的-我的社区-详情.png'),
+              url: require('../../static/imgs/bh/我的-我的社区-详情.png'),
               des: '我的-我的社区-详情'
             },
             {
-              url: require('@/assets/imgs/bh/我的-我的社区-状态.png'),
+              url: require('../../static/imgs/bh/我的-我的社区-状态.png'),
               des: '我的-我的社区-状态'
             },
             {
-              url: require('@/assets/imgs/bh/我的-邀请好友.png'),
+              url: require('../../static/imgs/bh/我的-邀请好友.png'),
               des: '我的-邀请好友'
             },
             {
-              url: require('@/assets/imgs/bh/我的-主页.png'),
+              url: require('../../static/imgs/bh/我的-主页.png'),
               des: '我的-主页'
             },
             {
-              url: require('@/assets/imgs/bh/消息.png'),
+              url: require('../../static/imgs/bh/消息.png'),
               des: '消息'
             },
             {
-              url: require('@/assets/imgs/bh/最新项目.png'),
+              url: require('../../static/imgs/bh/最新项目.png'),
               des: '最新项目'
             }
           ]
@@ -106,111 +106,111 @@ export default {
           name: '停划算APP',
           imgs: [
             {
-              url: require('@/assets/imgs/ths/车场会员.png'),
+              url: require('../../static/imgs/ths/车场会员.png'),
               des: '车场会员'
             },
             {
-              url: require('@/assets/imgs/ths/电子发票填写.png'),
+              url: require('../../static/imgs/ths/电子发票填写.png'),
               des: '电子发票填写'
             },
             {
-              url: require('@/assets/imgs/ths/电子发票.png'),
+              url: require('../../static/imgs/ths/电子发票.png'),
               des: '电子发票'
             },
             {
-              url: require('@/assets/imgs/ths/订单-私人车位-降锁停车-弹窗.jpg'),
+              url: require('../../static/imgs/ths/订单-私人车位-降锁停车-弹窗.jpg'),
               des: '订单-私人车位-降锁停车-弹窗'
             },
             {
-              url: require('@/assets/imgs/ths/更多.png'),
+              url: require('../../static/imgs/ths/更多.png'),
               des: '更多'
             },
             {
-              url: require('@/assets/imgs/ths/客服中心-优化.png'),
+              url: require('../../static/imgs/ths/客服中心-优化.png'),
               des: '客服中心-优化'
             },
             {
-              url: require('@/assets/imgs/ths/平台会员-修改券样式.png'),
+              url: require('../../static/imgs/ths/平台会员-修改券样式.png'),
               des: '平台会员-修改券样式'
             },
             {
-              url: require('@/assets/imgs/ths/平台会员-组合券修改券样式.png'),
+              url: require('../../static/imgs/ths/平台会员-组合券修改券样式.png'),
               des: '平台会员-组合券修改券样式'
             },
             {
-              url: require('@/assets/imgs/ths/商家首页.png'),
+              url: require('../../static/imgs/ths/商家首页.png'),
               des: '商家首页'
             },
             {
-              url: require('@/assets/imgs/ths/驶离页面优化.png'),
+              url: require('../../static/imgs/ths/驶离页面优化.png'),
               des: '驶离页面优化'
             },
             {
-              url: require('@/assets/imgs/ths/首页广告更新.png'),
+              url: require('../../static/imgs/ths/首页广告更新.png'),
               des: '首页广告更新'
             },
             {
-              url: require('@/assets/imgs/ths/首页待支付.png'),
+              url: require('../../static/imgs/ths/首页待支付.png'),
               des: '首页待支付'
             },
             {
-              url: require('@/assets/imgs/ths/首页弹屏.png'),
+              url: require('../../static/imgs/ths/首页弹屏.png'),
               des: '首页弹屏'
             },
             {
-              url: require('@/assets/imgs/ths/首页进行中-车位号.png'),
+              url: require('../../static/imgs/ths/首页进行中-车位号.png'),
               des: '首页进行中-车位号'
             },
             {
-              url: require('@/assets/imgs/ths/首页拷贝.png'),
+              url: require('../../static/imgs/ths/首页拷贝.png'),
               des: '首页拷贝'
             },
             {
-              url: require('@/assets/imgs/ths/首页.jpg'),
+              url: require('../../static/imgs/ths/首页.jpg'),
               des: '首页'
             },
             {
-              url: require('@/assets/imgs/ths/首页-banner更新-1.png'),
+              url: require('../../static/imgs/ths/首页-banner更新-1.png'),
               des: '首页-banner更新-1'
             },
             {
-              url: require('@/assets/imgs/ths/数据中心.png'),
+              url: require('../../static/imgs/ths/数据中心.png'),
               des: '数据中心'
             },
             {
-              url: require('@/assets/imgs/ths/双车场会员.png'),
+              url: require('../../static/imgs/ths/双车场会员.png'),
               des: '双车场会员'
             },
             {
-              url: require('@/assets/imgs/ths/小程序-道闸车场-订单详情-支付凭证.png'),
+              url: require('../../static/imgs/ths/小程序-道闸车场-订单详情-支付凭证.png'),
               des: '小程序-道闸车场-订单详情-支付凭证'
             },
             {
-              url: require('@/assets/imgs/ths/押金已交.png'),
+              url: require('../../static/imgs/ths/押金已交.png'),
               des: '押金已交'
             },
             {
-              url: require('@/assets/imgs/ths/长租详情-秒杀.png'),
+              url: require('../../static/imgs/ths/长租详情-秒杀.png'),
               des: '长租详情-秒杀'
             },
             {
-              url: require('@/assets/imgs/ths/押金已交.png'),
+              url: require('../../static/imgs/ths/押金已交.png'),
               des: '押金已交'
             },
             {
-              url: require('@/assets/imgs/ths/支付凭证-已过期.png'),
+              url: require('../../static/imgs/ths/支付凭证-已过期.png'),
               des: '支付凭证-已过期'
             },
             {
-              url: require('@/assets/imgs/ths/支付凭证-已验证.png'),
+              url: require('../../static/imgs/ths/支付凭证-已验证.png'),
               des: '支付凭证-已验证'
             },
             {
-              url: require('@/assets/imgs/ths/支付凭证-无牌车.png'),
+              url: require('../../static/imgs/ths/支付凭证-无牌车.png'),
               des: '支付凭证-无牌车'
             },
             {
-              url: require('@/assets/imgs/ths/组合券详情2.png'),
+              url: require('../../static/imgs/ths/组合券详情2.png'),
               des: '组合券详情2'
             }
           ]
@@ -219,67 +219,67 @@ export default {
           name: '毓蒙中学pc端',
           imgs: [
             {
-              url: require('@/assets/imgs/ympc/班级页-班级考勤-课程考勤.png'),
+              url: require('../../static/imgs/ympc/班级页-班级考勤-课程考勤.png'),
               des: '班级页-班级考勤-课程考勤'
             },
             {
-              url: require('@/assets/imgs/ympc/班级页-班级考勤-校园考勤.png'),
+              url: require('../../static/imgs/ympc/班级页-班级考勤-校园考勤.png'),
               des: '班级页-班级考勤-校园考勤'
             },
             {
-              url: require('@/assets/imgs/ympc/班级页-德育-拷贝.png'),
+              url: require('../../static/imgs/ympc/班级页-德育-拷贝.png'),
               des: '班级页-德育-拷贝'
             },
             {
-              url: require('@/assets/imgs/ympc/班级页-德育.png'),
+              url: require('../../static/imgs/ympc/班级页-德育.png'),
               des: '班级页-德育'
             },
             {
-              url: require('@/assets/imgs/ympc/班级页-登录.png'),
+              url: require('../../static/imgs/ympc/班级页-登录.png'),
               des: '班级页-登录'
             },
             {
-              url: require('@/assets/imgs/ympc/班级页-课表.png'),
+              url: require('../../static/imgs/ympc/班级页-课表.png'),
               des: '班级页-课表'
             },
             {
-              url: require('@/assets/imgs/ympc/班级页-食谱.png'),
+              url: require('../../static/imgs/ympc/班级页-食谱.png'),
               des: '班级页-食谱'
             },
             {
-              url: require('@/assets/imgs/ympc/课程考勤.png'),
+              url: require('../../static/imgs/ympc/课程考勤.png'),
               des: '课程考勤'
             },
             {
-              url: require('@/assets/imgs/ympc/列表-按钮选中.png'),
+              url: require('../../static/imgs/ympc/列表-按钮选中.png'),
               des: '列表-按钮选中'
             },
             {
-              url: require('@/assets/imgs/ympc/列表—未选中.png'),
+              url: require('../../static/imgs/ympc/列表—未选中.png'),
               des: '列表—未选中'
             },
             {
-              url: require('@/assets/imgs/ympc/设置页-绑定服务器地址-成功.png'),
+              url: require('../../static/imgs/ympc/设置页-绑定服务器地址-成功.png'),
               des: '设置页-绑定服务器地址-成功'
             },
             {
-              url: require('@/assets/imgs/ympc/设置页-绑定服务器地址.png'),
+              url: require('../../static/imgs/ympc/设置页-绑定服务器地址.png'),
               des: '设置页-绑定服务器地址'
             },
             {
-              url: require('@/assets/imgs/ympc/设置页-弹窗.png'),
+              url: require('../../static/imgs/ympc/设置页-弹窗.png'),
               des: '设置页-弹窗'
             },
             {
-              url: require('@/assets/imgs/ympc/首页.png'),
+              url: require('../../static/imgs/ympc/首页.png'),
               des: '首页'
             },
             {
-              url: require('@/assets/imgs/ympc/学校.png'),
+              url: require('../../static/imgs/ympc/学校.png'),
               des: '学校'
             },
             {
-              url: require('@/assets/imgs/ympc/学校——详情.png'),
+              url: require('../../static/imgs/ympc/学校——详情.png'),
               des: '学校——详情'
             }
           ]
@@ -288,103 +288,103 @@ export default {
           name: '毓蒙中学后台端',
           imgs: [
             {
-              url: require('@/assets/imgs/ymht/首页.png'),
+              url: require('../../static/imgs/ymht/首页.png'),
               des: '首页'
             },
             {
-              url: require('@/assets/imgs/ymht/查看课程-删除.png'),
+              url: require('../../static/imgs/ymht/查看课程-删除.png'),
               des: '查看课程-删除'
             },
             {
-              url: require('@/assets/imgs/ymht/德育评分.png'),
+              url: require('../../static/imgs/ymht/德育评分.png'),
               des: '德育评分'
             },
             {
-              url: require('@/assets/imgs/ymht/德育维度管理.png'),
+              url: require('../../static/imgs/ymht/德育维度管理.png'),
               des: '德育维度管理'
             },
             {
-              url: require('@/assets/imgs/ymht/德育维度管理-查看.png'),
+              url: require('../../static/imgs/ymht/德育维度管理-查看.png'),
               des: '德育维度管理-查看'
             },
             {
-              url: require('@/assets/imgs/ymht/德育维度管理-弹窗-1.png'),
+              url: require('../../static/imgs/ymht/德育维度管理-弹窗-1.png'),
               des: '德育维度管理-弹窗-1'
             },
             {
-              url: require('@/assets/imgs/ymht/滚动通知.png'),
+              url: require('../../static/imgs/ymht/滚动通知.png'),
               des: '滚动通知'
             },
             {
-              url: require('@/assets/imgs/ymht/教师档案-审核中.png'),
+              url: require('../../static/imgs/ymht/教师档案-审核中.png'),
               des: '教师档案-审核中'
             },
             {
-              url: require('@/assets/imgs/ymht/排课管理-班级课表-拷贝6.png'),
+              url: require('../../static/imgs/ymht/排课管理-班级课表-拷贝6.png'),
               des: '排课管理-班级课表-拷贝6'
             },
             {
-              url: require('@/assets/imgs/ymht/排课管理-班级课表-拷贝7.png'),
+              url: require('../../static/imgs/ymht/排课管理-班级课表-拷贝7.png'),
               des: '排课管理-班级课表-拷贝7'
             },
             {
-              url: require('@/assets/imgs/ymht/排课管理-班级课表-拷贝8.png'),
+              url: require('../../static/imgs/ymht/排课管理-班级课表-拷贝8.png'),
               des: '排课管理-班级课表-拷贝8'
             },
             {
-              url: require('@/assets/imgs/ymht/排课管理-班级课表-编辑.png'),
+              url: require('../../static/imgs/ymht/排课管理-班级课表-编辑.png'),
               des: '排课管理-班级课表-编辑'
             },
             {
-              url: require('@/assets/imgs/ymht/排课管理-班级课表新增.png'),
+              url: require('../../static/imgs/ymht/排课管理-班级课表新增.png'),
               des: '排课管理-班级课表新增'
             },
             {
-              url: require('@/assets/imgs/ymht/排课管理-自选课程管理-拷贝2.png'),
+              url: require('../../static/imgs/ymht/排课管理-自选课程管理-拷贝2.png'),
               des: '排课管理-自选课程管理-拷贝2'
             },
             {
-              url: require('@/assets/imgs/ymht/排课管理-自选课程管理-拷贝.png'),
+              url: require('../../static/imgs/ymht/排课管理-自选课程管理-拷贝.png'),
               des: '排课管理-自选课程管理-拷贝'
             },
             {
-              url: require('@/assets/imgs/ymht/排课管理-自选课程管理.png'),
+              url: require('../../static/imgs/ymht/排课管理-自选课程管理.png'),
               des: '排课管理-自选课程管理'
             },
             {
-              url: require('@/assets/imgs/ymht/排课管理-自选课程管理-查看课程.png'),
+              url: require('../../static/imgs/ymht/排课管理-自选课程管理-查看课程.png'),
               des: '排课管理-自选课程管理-查看课程'
             },
             {
-              url: require('@/assets/imgs/ymht/添加课程.png'),
+              url: require('../../static/imgs/ymht/添加课程.png'),
               des: '添加课程'
             },
             {
-              url: require('@/assets/imgs/ymht/添加-课程.png'),
+              url: require('../../static/imgs/ymht/添加-课程.png'),
               des: '添加-课程'
             },
             {
-              url: require('@/assets/imgs/ymht/新增班级发布.png'),
+              url: require('../../static/imgs/ymht/新增班级发布.png'),
               des: '新增班级发布'
             },
             {
-              url: require('@/assets/imgs/ymht/新增通知动态.png'),
+              url: require('../../static/imgs/ymht/新增通知动态.png'),
               des: '新增通知动态'
             },
             {
-              url: require('@/assets/imgs/ymht/学生档案新增-户籍信息-步骤条展示.png'),
+              url: require('../../static/imgs/ymht/学生档案新增-户籍信息-步骤条展示.png'),
               des: '学生档案新增-户籍信息-步骤条展示'
             },
             {
-              url: require('@/assets/imgs/ymht/学生档案新增-基础信息.png'),
+              url: require('../../static/imgs/ymht/学生档案新增-基础信息.png'),
               des: '学生档案新增-基础信息'
             },
             {
-              url: require('@/assets/imgs/ymht/学生学籍.jpg'),
+              url: require('../../static/imgs/ymht/学生学籍.jpg'),
               des: '学生学籍'
             },
             {
-              url: require('@/assets/imgs/ymht/学生档案新增-现居住地信息.png'),
+              url: require('../../static/imgs/ymht/学生档案新增-现居住地信息.png'),
               des: '学生档案新增-现居住地信息'
             }
           ]
@@ -393,47 +393,47 @@ export default {
           name: '校园车辆管理',
           imgs: [
             {
-              url: require('@/assets/imgs/cl/首页.jpg'),
+              url: require('../../static/imgs/cl/首页.jpg'),
               des: '首页'
             },
             {
-              url: require('@/assets/imgs/cl/车辆管理——黑名单.png'),
+              url: require('../../static/imgs/cl/车辆管理——黑名单.png'),
               des: '车辆管理——黑名单'
             },
             {
-              url: require('@/assets/imgs/cl/车辆管理首页大屏.png'),
+              url: require('../../static/imgs/cl/车辆管理首页大屏.png'),
               des: '车辆管理首页大屏'
             },
             {
-              url: require('@/assets/imgs/cl/车辆管理——异常.png'),
+              url: require('../../static/imgs/cl/车辆管理——异常.png'),
               des: '车辆管理——异常'
             },
             {
-              url: require('@/assets/imgs/cl/道闸放行.png'),
+              url: require('../../static/imgs/cl/道闸放行.png'),
               des: '道闸放行'
             },
             {
-              url: require('@/assets/imgs/cl/道闸放行-提示.png'),
+              url: require('../../static/imgs/cl/道闸放行-提示.png'),
               des: '道闸放行-提示'
             },
             {
-              url: require('@/assets/imgs/cl/管理中心-车辆信息.png'),
+              url: require('../../static/imgs/cl/管理中心-车辆信息.png'),
               des: '管理中心-车辆信息'
             },
             {
-              url: require('@/assets/imgs/cl/管理中心-车辆信息-新增正确.png'),
+              url: require('../../static/imgs/cl/管理中心-车辆信息-新增正确.png'),
               des: '管理中心-车辆信息-新增正确'
             },
             {
-              url: require('@/assets/imgs/cl/管理中心-预留车位管理.png'),
+              url: require('../../static/imgs/cl/管理中心-预留车位管理.png'),
               des: '管理中心-预留车位管理'
             },
             {
-              url: require('@/assets/imgs/cl/数据中心-数据统计.png'),
+              url: require('../../static/imgs/cl/数据中心-数据统计.png'),
               des: '数据中心-数据统计'
             },
             {
-              url: require('@/assets/imgs/cl/员工查看.png'),
+              url: require('../../static/imgs/cl/员工查看.png'),
               des: '员工查看'
             }
           ]
@@ -442,35 +442,35 @@ export default {
           name: '平面作品',
           imgs: [
             {
-              url: require('@/assets/imgs/pm/二折页-正面.png'),
+              url: require('../../static/imgs/pm/二折页-正面.png'),
               des: '二折页-正面'
             },
             {
-              url: require('@/assets/imgs/pm/二折页-内容.png'),
+              url: require('../../static/imgs/pm/二折页-内容.png'),
               des: '二折页-内容'
             },
             {
-              url: require('@/assets/imgs/pm/停划算二折页宣传-内页.jpg'),
+              url: require('../../static/imgs/pm/停划算二折页宣传-内页.jpg'),
               des: '停划算二折页宣传-内页'
             },
             {
-              url: require('@/assets/imgs/pm/三折页-正.jpg'),
+              url: require('../../static/imgs/pm/三折页-正.jpg'),
               des: '三折页-正'
             },
             {
-              url: require('@/assets/imgs/pm/三折页-反.jpg'),
+              url: require('../../static/imgs/pm/三折页-反.jpg'),
               des: '三折页-反'
             },
             {
-              url: require('@/assets/imgs/pm/锦香苑饭店欢迎您.png'),
+              url: require('../../static/imgs/pm/锦香苑饭店欢迎您.png'),
               des: '锦香苑饭店欢迎您'
             },
             {
-              url: require('@/assets/imgs/pm/兰州优惠券-9.9张贴海报60cm-90cm.jpg'),
+              url: require('../../static/imgs/pm/兰州优惠券-9.9张贴海报60cm-90cm.jpg'),
               des: '兰州优惠券-9.9张贴海报60cm-90cm'
             },
             {
-              url: require('@/assets/imgs/pm/击剑.png'),
+              url: require('../../static/imgs/pm/击剑.png'),
               des: '击剑'
             }
           ]
