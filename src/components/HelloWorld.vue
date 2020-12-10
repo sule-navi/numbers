@@ -2,493 +2,451 @@
  * @Author: Sule
  * @Date: 2020-04-13 14:12:11
  * @LastEditors: Sule
- * @LastEditTime: 2020-04-13 18:21:03
+ * @LastEditTime: 2020-12-10 14:36:08
  * @Description:
  -->
 <template>
   <el-container style="height:100%">
     <el-header style>
-      <h1 style="text-align: center;margin-top: 20px;">UI作品展示（部分作品，点击图片可大图全部预览）</h1>
-      <h5 style="text-align: center;margin-top: 5px;font-weight: normal;">作者：王菲</h5>
+      <h1 style="text-align: center;margin-top: 20px;">Number Is Number</h1>
+      <h5 style="text-align: center;margin-top: 5px;font-weight: normal;">author: sure</h5>
+      <div style="position: fixed;right: 40px;z-index: 99;">
+         <el-input-number v-model="num" controls-position="right" :min="0" :max="9" style="width: 110px;"></el-input-number>
+        <el-button type="primary" @click.enter="changeNumber">Push</el-button>
+        <el-button type="danger" @click="Delete">Delete Last</el-button>
+      </div>
     </el-header>
     <el-main style="height:100%"  class="ui">
-      <template>
-        <el-tabs :tab-position="tabPosition" style="height: 100%;">
-          <el-tab-pane v-for="(p,i) in projects" :key="i" :label="p.name">
-            <div class="block" v-for="(img,idx) in p.imgs" :key="idx">
-              <span class="demonstration">{{img.des}}</span>
-              <el-image :src="img.url" fit="contain" :alt="img.des" :preview-src-list="srcList">
-                <div slot="placeholder" class="image-slot">
-                  加载中
-                  <span class="dot">...</span>
-                </div>
-              </el-image>
-            </div>
-          </el-tab-pane>
-        </el-tabs>
-      </template>
+      <div class="numbertable" id="numbertable"></div>
+      <div style="width:100%; height:50%">
+        <div class="bars" id="bar1"></div>
+        <div class="bars" id="bar2"></div>
+        <div class="bars" id="bar3"></div>
+      </div>
     </el-main>
   </el-container>
 </template>
 <script>
+import auth from "@/utils/auth";
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      tabPosition: 'left',
-      projects: [
-        {
-          name: '币海APP',
-          imgs: [
-            {
-              url: require('../../static/imgs/bh/登陆.png'),
-              des: '登陆'
-            },
-            {
-              url: require('../../static/imgs/bh/币圈黑洞-详情.png'),
-              des: '币圈黑洞-详情'
-            },
-            {
-              url: require('../../static/imgs/bh/创建社区.png'),
-              des: '创建社区'
-            },
-            {
-              url: require('../../static/imgs/bh/发布动态.png'),
-              des: '发布动态'
-            },
-            {
-              url: require('../../static/imgs/bh/发布黑洞.png'),
-              des: '发布黑洞'
-            },
-            {
-              url: require('../../static/imgs/bh/签到-1.png'),
-              des: '签到-1'
-            },
-            {
-              url: require('../../static/imgs/bh/首页-1.png'),
-              des: '首页-1'
-            },
-            {
-              url: require('../../static/imgs/bh/我的-设置.png'),
-              des: '我的-设置'
-            },
-            {
-              url: require('../../static/imgs/bh/我的-使用帮助.png'),
-              des: '我的-使用帮助'
-            },
-            {
-              url: require('../../static/imgs/bh/我的-我的社区-详情.png'),
-              des: '我的-我的社区-详情'
-            },
-            {
-              url: require('../../static/imgs/bh/我的-我的社区-状态.png'),
-              des: '我的-我的社区-状态'
-            },
-            {
-              url: require('../../static/imgs/bh/我的-邀请好友.png'),
-              des: '我的-邀请好友'
-            },
-            {
-              url: require('../../static/imgs/bh/我的-主页.png'),
-              des: '我的-主页'
-            },
-            {
-              url: require('../../static/imgs/bh/消息.png'),
-              des: '消息'
-            },
-            {
-              url: require('../../static/imgs/bh/最新项目.png'),
-              des: '最新项目'
-            }
-          ]
-        },
-        {
-          name: '停划算APP',
-          imgs: [
-            {
-              url: require('../../static/imgs/ths/车场会员.png'),
-              des: '车场会员'
-            },
-            {
-              url: require('../../static/imgs/ths/电子发票填写.png'),
-              des: '电子发票填写'
-            },
-            {
-              url: require('../../static/imgs/ths/电子发票.png'),
-              des: '电子发票'
-            },
-            {
-              url: require('../../static/imgs/ths/订单-私人车位-降锁停车-弹窗.jpg'),
-              des: '订单-私人车位-降锁停车-弹窗'
-            },
-            {
-              url: require('../../static/imgs/ths/更多.png'),
-              des: '更多'
-            },
-            {
-              url: require('../../static/imgs/ths/客服中心-优化.png'),
-              des: '客服中心-优化'
-            },
-            {
-              url: require('../../static/imgs/ths/平台会员-修改券样式.png'),
-              des: '平台会员-修改券样式'
-            },
-            {
-              url: require('../../static/imgs/ths/平台会员-组合券修改券样式.png'),
-              des: '平台会员-组合券修改券样式'
-            },
-            {
-              url: require('../../static/imgs/ths/商家首页.png'),
-              des: '商家首页'
-            },
-            {
-              url: require('../../static/imgs/ths/驶离页面优化.png'),
-              des: '驶离页面优化'
-            },
-            {
-              url: require('../../static/imgs/ths/首页广告更新.png'),
-              des: '首页广告更新'
-            },
-            {
-              url: require('../../static/imgs/ths/首页待支付.png'),
-              des: '首页待支付'
-            },
-            {
-              url: require('../../static/imgs/ths/首页弹屏.png'),
-              des: '首页弹屏'
-            },
-            {
-              url: require('../../static/imgs/ths/首页进行中-车位号.png'),
-              des: '首页进行中-车位号'
-            },
-            {
-              url: require('../../static/imgs/ths/首页拷贝.png'),
-              des: '首页拷贝'
-            },
-            {
-              url: require('../../static/imgs/ths/首页.jpg'),
-              des: '首页'
-            },
-            {
-              url: require('../../static/imgs/ths/首页-banner更新-1.png'),
-              des: '首页-banner更新-1'
-            },
-            {
-              url: require('../../static/imgs/ths/数据中心.png'),
-              des: '数据中心'
-            },
-            {
-              url: require('../../static/imgs/ths/双车场会员.png'),
-              des: '双车场会员'
-            },
-            {
-              url: require('../../static/imgs/ths/小程序-道闸车场-订单详情-支付凭证.png'),
-              des: '小程序-道闸车场-订单详情-支付凭证'
-            },
-            {
-              url: require('../../static/imgs/ths/押金已交.png'),
-              des: '押金已交'
-            },
-            {
-              url: require('../../static/imgs/ths/长租详情-秒杀.png'),
-              des: '长租详情-秒杀'
-            },
-            {
-              url: require('../../static/imgs/ths/押金已交.png'),
-              des: '押金已交'
-            },
-            {
-              url: require('../../static/imgs/ths/支付凭证-已过期.png'),
-              des: '支付凭证-已过期'
-            },
-            {
-              url: require('../../static/imgs/ths/支付凭证-已验证.png'),
-              des: '支付凭证-已验证'
-            },
-            {
-              url: require('../../static/imgs/ths/支付凭证-无牌车.png'),
-              des: '支付凭证-无牌车'
-            },
-            {
-              url: require('../../static/imgs/ths/组合券详情2.png'),
-              des: '组合券详情2'
-            }
-          ]
-        },
-        {
-          name: '毓蒙中学pc端',
-          imgs: [
-            {
-              url: require('../../static/imgs/ympc/班级页-班级考勤-课程考勤.png'),
-              des: '班级页-班级考勤-课程考勤'
-            },
-            {
-              url: require('../../static/imgs/ympc/班级页-班级考勤-校园考勤.png'),
-              des: '班级页-班级考勤-校园考勤'
-            },
-            {
-              url: require('../../static/imgs/ympc/班级页-德育-拷贝.png'),
-              des: '班级页-德育-拷贝'
-            },
-            {
-              url: require('../../static/imgs/ympc/班级页-德育.png'),
-              des: '班级页-德育'
-            },
-            {
-              url: require('../../static/imgs/ympc/班级页-登录.png'),
-              des: '班级页-登录'
-            },
-            {
-              url: require('../../static/imgs/ympc/班级页-课表.png'),
-              des: '班级页-课表'
-            },
-            {
-              url: require('../../static/imgs/ympc/班级页-食谱.png'),
-              des: '班级页-食谱'
-            },
-            {
-              url: require('../../static/imgs/ympc/课程考勤.png'),
-              des: '课程考勤'
-            },
-            {
-              url: require('../../static/imgs/ympc/列表-按钮选中.png'),
-              des: '列表-按钮选中'
-            },
-            {
-              url: require('../../static/imgs/ympc/列表—未选中.png'),
-              des: '列表—未选中'
-            },
-            {
-              url: require('../../static/imgs/ympc/设置页-绑定服务器地址-成功.png'),
-              des: '设置页-绑定服务器地址-成功'
-            },
-            {
-              url: require('../../static/imgs/ympc/设置页-绑定服务器地址.png'),
-              des: '设置页-绑定服务器地址'
-            },
-            {
-              url: require('../../static/imgs/ympc/设置页-弹窗.png'),
-              des: '设置页-弹窗'
-            },
-            {
-              url: require('../../static/imgs/ympc/首页.png'),
-              des: '首页'
-            },
-            {
-              url: require('../../static/imgs/ympc/学校.png'),
-              des: '学校'
-            },
-            {
-              url: require('../../static/imgs/ympc/学校——详情.png'),
-              des: '学校——详情'
-            }
-          ]
-        },
-        {
-          name: '毓蒙中学后台端',
-          imgs: [
-            {
-              url: require('../../static/imgs/ymht/首页.png'),
-              des: '首页'
-            },
-            {
-              url: require('../../static/imgs/ymht/查看课程-删除.png'),
-              des: '查看课程-删除'
-            },
-            {
-              url: require('../../static/imgs/ymht/德育评分.png'),
-              des: '德育评分'
-            },
-            {
-              url: require('../../static/imgs/ymht/德育维度管理.png'),
-              des: '德育维度管理'
-            },
-            {
-              url: require('../../static/imgs/ymht/德育维度管理-查看.png'),
-              des: '德育维度管理-查看'
-            },
-            {
-              url: require('../../static/imgs/ymht/德育维度管理-弹窗-1.png'),
-              des: '德育维度管理-弹窗-1'
-            },
-            {
-              url: require('../../static/imgs/ymht/滚动通知.png'),
-              des: '滚动通知'
-            },
-            {
-              url: require('../../static/imgs/ymht/教师档案-审核中.png'),
-              des: '教师档案-审核中'
-            },
-            {
-              url: require('../../static/imgs/ymht/排课管理-班级课表-拷贝6.png'),
-              des: '排课管理-班级课表-拷贝6'
-            },
-            {
-              url: require('../../static/imgs/ymht/排课管理-班级课表-拷贝7.png'),
-              des: '排课管理-班级课表-拷贝7'
-            },
-            {
-              url: require('../../static/imgs/ymht/排课管理-班级课表-拷贝8.png'),
-              des: '排课管理-班级课表-拷贝8'
-            },
-            {
-              url: require('../../static/imgs/ymht/排课管理-班级课表-编辑.png'),
-              des: '排课管理-班级课表-编辑'
-            },
-            {
-              url: require('../../static/imgs/ymht/排课管理-班级课表新增.png'),
-              des: '排课管理-班级课表新增'
-            },
-            {
-              url: require('../../static/imgs/ymht/排课管理-自选课程管理-拷贝2.png'),
-              des: '排课管理-自选课程管理-拷贝2'
-            },
-            {
-              url: require('../../static/imgs/ymht/排课管理-自选课程管理-拷贝.png'),
-              des: '排课管理-自选课程管理-拷贝'
-            },
-            {
-              url: require('../../static/imgs/ymht/排课管理-自选课程管理.png'),
-              des: '排课管理-自选课程管理'
-            },
-            {
-              url: require('../../static/imgs/ymht/排课管理-自选课程管理-查看课程.png'),
-              des: '排课管理-自选课程管理-查看课程'
-            },
-            {
-              url: require('../../static/imgs/ymht/添加课程.png'),
-              des: '添加课程'
-            },
-            {
-              url: require('../../static/imgs/ymht/添加-课程.png'),
-              des: '添加-课程'
-            },
-            {
-              url: require('../../static/imgs/ymht/新增班级发布.png'),
-              des: '新增班级发布'
-            },
-            {
-              url: require('../../static/imgs/ymht/新增通知动态.png'),
-              des: '新增通知动态'
-            },
-            {
-              url: require('../../static/imgs/ymht/学生档案新增-户籍信息-步骤条展示.png'),
-              des: '学生档案新增-户籍信息-步骤条展示'
-            },
-            {
-              url: require('../../static/imgs/ymht/学生档案新增-基础信息.png'),
-              des: '学生档案新增-基础信息'
-            },
-            {
-              url: require('../../static/imgs/ymht/学生学籍.jpg'),
-              des: '学生学籍'
-            },
-            {
-              url: require('../../static/imgs/ymht/学生档案新增-现居住地信息.png'),
-              des: '学生档案新增-现居住地信息'
-            }
-          ]
-        },
-        {
-          name: '校园车辆管理',
-          imgs: [
-            {
-              url: require('../../static/imgs/cl/首页.jpg'),
-              des: '首页'
-            },
-            {
-              url: require('../../static/imgs/cl/车辆管理——黑名单.png'),
-              des: '车辆管理——黑名单'
-            },
-            {
-              url: require('../../static/imgs/cl/车辆管理首页大屏.png'),
-              des: '车辆管理首页大屏'
-            },
-            {
-              url: require('../../static/imgs/cl/车辆管理——异常.png'),
-              des: '车辆管理——异常'
-            },
-            {
-              url: require('../../static/imgs/cl/道闸放行.png'),
-              des: '道闸放行'
-            },
-            {
-              url: require('../../static/imgs/cl/道闸放行-提示.png'),
-              des: '道闸放行-提示'
-            },
-            {
-              url: require('../../static/imgs/cl/管理中心-车辆信息.png'),
-              des: '管理中心-车辆信息'
-            },
-            {
-              url: require('../../static/imgs/cl/管理中心-车辆信息-新增正确.png'),
-              des: '管理中心-车辆信息-新增正确'
-            },
-            {
-              url: require('../../static/imgs/cl/管理中心-预留车位管理.png'),
-              des: '管理中心-预留车位管理'
-            },
-            {
-              url: require('../../static/imgs/cl/数据中心-数据统计.png'),
-              des: '数据中心-数据统计'
-            },
-            {
-              url: require('../../static/imgs/cl/员工查看.png'),
-              des: '员工查看'
-            }
-          ]
-        },
-        {
-          name: '平面作品',
-          imgs: [
-            {
-              url: require('../../static/imgs/pm/二折页-正面.png'),
-              des: '二折页-正面'
-            },
-            {
-              url: require('../../static/imgs/pm/二折页-内容.png'),
-              des: '二折页-内容'
-            },
-            {
-              url: require('../../static/imgs/pm/停划算二折页宣传-内页.jpg'),
-              des: '停划算二折页宣传-内页'
-            },
-            {
-              url: require('../../static/imgs/pm/三折页-正.jpg'),
-              des: '三折页-正'
-            },
-            {
-              url: require('../../static/imgs/pm/三折页-反.jpg'),
-              des: '三折页-反'
-            },
-            {
-              url: require('../../static/imgs/pm/锦香苑饭店欢迎您.png'),
-              des: '锦香苑饭店欢迎您'
-            },
-            {
-              url: require('../../static/imgs/pm/兰州优惠券-9.9张贴海报60cm-90cm.jpg'),
-              des: '兰州优惠券-9.9张贴海报60cm-90cm'
-            },
-            {
-              url: require('../../static/imgs/pm/击剑.png'),
-              des: '击剑'
-            }
-          ]
-        }
-      ],
-      srcList: [
-      ]
+      num: 0,
+      nums: [], // 全部
+      viewnums: [], // 近100
+      viewnums200: [],  // 近200
+      num1: '',  // 近1位数
+      num2: '',  // 近2位数
+      num3: '',  // 近3位数
+      user: null,
     }
   },
+  created() {
+    this.user = auth.getSessionStorage('user');
+    this.nums = auth.getLocalStorage("nums", this.user) || [];
+    const arr = this.nums.concat().reverse();
+    this.viewnums = arr.slice(0, 100);
+    this.viewnums200 = arr.slice(0, 200);
+    this.viewnums.reverse();
+    this.viewnums200.reverse();
+    this.num1 = this.viewnums[this.viewnums.length - 1] + '';
+    this.num2 = this.viewnums.length > 1 ? this.viewnums[this.viewnums.length - 2] + '' + this.viewnums[this.viewnums.length - 1] : "";
+    this.num3 = this.viewnums.length > 2 ? this.viewnums[this.viewnums.length - 3] + '' + this.viewnums[this.viewnums.length - 2] + '' + this.viewnums[this.viewnums.length - 1] : '';
+  },
   mounted () {
-    const arr = []
-    this.projects.forEach(p => {
-      p.imgs.forEach(i => {
-        if (i.url) { arr.push(i.url) }
-      })
-    })
-    this.srcList = arr
-  }
+   this.drawLine();
+   this.drawBar1();
+   this.drawBar2();
+   this.drawBar3();
+  },
+   methods: {
+     Delete() {
+       if (!this.nums.length) {
+         return;
+       }
+       this.$confirm('是否要删除上一轮数字?', '提示', {
+          confirmButtonText: 'yes',
+          cancelButtonText: 'cancel',
+          type: 'warning'
+        }).then(() => {
+          this.nums.pop();
+       const arr = this.nums.concat().reverse();
+       this.viewnums = arr.slice(0, 100);
+       this.viewnums200 = arr.slice(0, 200);
+       this.viewnums.reverse();
+       this.viewnums200.reverse();
+       auth.setLocalStorage("nums", this.nums, this.user);
+       this.num1 = this.viewnums[this.viewnums.length - 1] + '';
+       this.num2 = this.viewnums.length > 1 ? this.viewnums[this.viewnums.length - 2] + '' + this.viewnums[this.viewnums.length - 1] : "";
+       this.num3 = this.viewnums.length > 2 ? this.viewnums[this.viewnums.length - 3] + '' + this.viewnums[this.viewnums.length - 2] + '' + this.viewnums[this.viewnums.length - 1] : '';
+       this.drawLine();
+       this.drawBar1();
+       this.drawBar2();
+       this.drawBar3();
+        }).catch(() => {
+        });
+     },
+     changeNumber() {
+       this.nums.push(this.num);
+       if (this.nums.length > 2500) { // 存总入数量控制
+         this.nums.shift();
+       }
+       const arr = this.nums.concat().reverse();
+       this.viewnums = arr.slice(0, 100);
+       this.viewnums200 = arr.slice(0, 200);
+       this.viewnums.reverse();
+       this.viewnums200.reverse();
+       auth.setLocalStorage("nums", this.nums, this.user);
+       this.num1 = this.viewnums[this.viewnums.length - 1] + '';
+       this.num2 = this.viewnums.length > 1 ? this.viewnums[this.viewnums.length - 2] + '' + this.viewnums[this.viewnums.length - 1] : "";
+       this.num3 = this.viewnums.length > 2 ? this.viewnums[this.viewnums.length - 3] + '' + this.viewnums[this.viewnums.length - 2] + '' + this.viewnums[this.viewnums.length - 1] : '';
+       this.drawLine();
+       this.drawBar1();
+       this.drawBar2();
+       this.drawBar3();
+       this.num = 0;
+     },
+    drawLine() {
+        // 基于准备好的dom，初始化echarts实例
+        let myChart = this.$echarts(document.getElementById('numbertable'))
+        // 绘制图表
+        myChart.setOption({
+            title: { text: '近100轮' },
+            tooltip: {
+              trigger: 'axis',
+              axisPointer: {
+                type: 'cross',
+                label: {
+                  backgroundColor: '#6a7985'
+                }
+              }
+            },
+            xAxis: {
+                data: this.viewnums.map((e,i) => {
+                  return i + 1 + '轮';
+                })
+            },
+            yAxis: {
+              maxInterval: 1,
+              minInterval: 1,
+              type: 'value',
+              minorTick: {
+                lineStyle: { color: 'blue',  opacity: 1}
+              }
+            },
+            series: [{
+                name: '本轮',
+                type: 'line',
+                data: this.viewnums,
+                label: {
+                normal: {
+                    show: true,
+                    position: 'top'
+                }
+            },
+                markLine: {
+                  data: [
+                    {type: 'average', name: '平均值'}
+                  ]
+                }
+            }]
+        });
+    },
+    drawBar1() {
+        // 基于准备好的dom，初始化echarts实例
+        let myChart = this.$echarts(document.getElementById('bar1'));
+        const data200 = this.toData(this.num1, this.viewnums200, []);
+        const dataAll = this.toData(this.num1, this.nums, []);
+        // 绘制图表
+        myChart.setOption({
+            title: { text: '近1轮数: ' + this.num1 },
+            tooltip: {
+              trigger: 'axis',
+              axisPointer: {
+                type: 'cross',
+                label: {
+                  backgroundColor: '#6a7985'
+                }
+              }
+            },
+            legend: {
+              data: ['近200轮内', '历史全部']
+            },
+            toolbox: {
+              show: true,
+              feature: {
+                magicType: {show: true, type: ['line', 'bar']},
+              }
+            },
+            calculable: true,
+            xAxis: [
+              {
+                type: 'category',
+                data: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+              }
+            ],
+            yAxis: {
+              type: 'value',
+              minorTick: {
+                lineStyle: { color: 'blue',  opacity: 1}
+              }
+            },
+            series: [
+              {
+                  name: '近200轮内',
+                  type: 'bar',
+                  data: data200,
+                  markPoint: {
+                      data: [
+                          {type: 'max', name: '最大值'},
+                          {type: 'min', name: '最小值'}
+                      ]
+                  },
+                  markLine: {
+                      data: [
+                          {type: 'average', name: '平均值'}
+                      ]
+                  }
+              },
+              {
+                  name: '历史全部',
+                  type: 'bar',
+                  data: dataAll,
+                  markPoint: {
+                      data: [
+                          {type: 'max', name: '最大值'},
+                          {type: 'min', name: '最小值'}
+                      ]
+                  },
+                  markLine: {
+                      data: [
+                          {type: 'average', name: '平均值'}
+                      ]
+                  }
+              }
+            ]
+        });
+    },
+    drawBar2() {
+        // 基于准备好的dom，初始化echarts实例
+        let myChart = this.$echarts(document.getElementById('bar2'));
+        let data200 = [];
+        let dataAll = [];
+        if (this.viewnums200.length > 2) {
+          const str200 = this.viewnums200.join('');
+          const str200No1 = str200.substring(1);
+          const strAll = this.nums.join('');
+          const strAllNo1 = strAll.substring(1);
+          const arr200 = this.strToArrByLen(str200, 2);
+          const arr201 = this.strToArrByLen(str200No1, 2);
+          const arrAll = this.strToArrByLen(strAll, 2);
+          const arrrAll1 = this.strToArrByLen(strAllNo1, 2);
+          data200 = this.toData(this.num2, arr200, arr201);
+          dataAll = this.toData(this.num2, arrAll, arrrAll1);
+        }
+        // 绘制图表
+        myChart.setOption({
+            title: { text: '近2轮数: ' + this.num2 },
+            tooltip: {
+              trigger: 'axis',
+              axisPointer: {
+                type: 'cross',
+                label: {
+                  backgroundColor: '#6a7985'
+                }
+              }
+            },
+            legend: {
+              data: ['近200轮内', '历史全部']
+            },
+            toolbox: {
+              show: true,
+              feature: {
+                magicType: {show: true, type: ['line', 'bar']},
+              }
+            },
+            calculable: true,
+            xAxis: [
+              {
+                type: 'category',
+                data: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+              }
+            ],
+            yAxis: {
+              type: 'value',
+              minorTick: {
+                lineStyle: { color: 'blue',  opacity: 1}
+              }
+            },
+            series: [
+              {
+                  name: '近200轮内',
+                  type: 'bar',
+                  data: data200,
+                  markPoint: {
+                      data: [
+                          {type: 'max', name: '最大值'},
+                          {type: 'min', name: '最小值'}
+                      ]
+                  },
+                  markLine: {
+                      data: [
+                          {type: 'average', name: '平均值'}
+                      ]
+                  }
+              },
+              {
+                  name: '历史全部',
+                  type: 'bar',
+                  data: dataAll,
+                  markPoint: {
+                      data: [
+                          {type: 'max', name: '最大值'},
+                          {type: 'min', name: '最小值'}
+                      ]
+                  },
+                  markLine: {
+                      data: [
+                          {type: 'average', name: '平均值'}
+                      ]
+                  }
+              }
+            ]
+        });
+    },
+    drawBar3() {
+        // 基于准备好的dom，初始化echarts实例
+        let myChart = this.$echarts(document.getElementById('bar3'));
+        let data200 = [];
+        let dataAll = [];
+        if (this.viewnums200.length > 2) {
+          const str200 = this.viewnums200.join('');
+          const str200No1 = str200.substring(1);
+          const str200No2 = str200.substring(2);
+          const strAll = this.nums.join('');
+          const strAllNo1 = strAll.substring(1);
+          const strAllNo2 = strAll.substring(2);
+          const arr200 = this.strToArrByLen(str200, 3);
+          const arr201 = this.strToArrByLen(str200No1, 3);
+          const arr202 = this.strToArrByLen(str200No2, 3);
+          const arrAll = this.strToArrByLen(strAll, 3);
+          const arrrAll1 = this.strToArrByLen(strAllNo1, 3);
+          const arrrAll2 = this.strToArrByLen(strAllNo2, 3);
+          data200 = this.toData(this.num3, arr200, arr201, arr202);
+          dataAll = this.toData(this.num3, arrAll, arrrAll1, arrrAll2);
+        }
+        // 绘制图表
+        myChart.setOption({
+            title: { text: '近3轮数: ' + this.num3 },
+           tooltip: {
+              trigger: 'axis',
+              axisPointer: {
+                type: 'cross',
+                label: {
+                  backgroundColor: '#6a7985'
+                }
+              }
+            },
+            legend: {
+              data: ['近200轮内', '历史全部']
+            },
+            toolbox: {
+              show: true,
+              feature: {
+                magicType: {show: true, type: ['line', 'bar']},
+              }
+            },
+            calculable: true,
+            xAxis: [
+              {
+                type: 'category',
+                data: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+              }
+            ],
+            yAxis: {
+              type: 'value',
+              minorTick: {
+                lineStyle: { color: 'blue',  opacity: 1}
+              }
+            },
+            series: [
+              {
+                  name: '近200轮内',
+                  type: 'bar',
+                  data: data200,
+                  markPoint: {
+                      data: [
+                          {type: 'max', name: '最大值'},
+                          {type: 'min', name: '最小值'}
+                      ]
+                  },
+                  markLine: {
+                      data: [
+                          {type: 'average', name: '平均值'}
+                      ]
+                  }
+              },
+              {
+                  name: '历史全部',
+                  type: 'bar',
+                  data: dataAll,
+                  markPoint: {
+                      data: [
+                          {type: 'max', name: '最大值'},
+                          {type: 'min', name: '最小值'}
+                      ]
+                  },
+                  markLine: {
+                      data: [
+                          {type: 'average', name: '平均值'}
+                      ]
+                  }
+              }
+            ]
+        });
+    },
+    strToArrByLen(str,len=2) { //str为待处理的文字,len为分割的字数个数
+      const strArr=[]
+      let startIndex=0
+      let endIndex=len
+      while(endIndex<str.length){
+          strArr.push(str.slice(startIndex,endIndex))
+          startIndex = endIndex,
+          endIndex+=len
+          if(endIndex>=str.length) strArr.push(str.slice(startIndex,str.length))
+      }
+      return strArr
+    },
+    toData(num, arr = [], arr1 = [], arr2 = []) {// 错位处理 保证相邻两个及以上都有机会 两位及以上整体时有效
+      const data = Array(10).fill(0);
+      arr.forEach((ele, index) => {
+        if (ele == num) {
+          if (arr[index + 1] != undefined) {
+            const td = (arr[index + 1] + '')[0];
+            data[+td]++;
+          }
+        }
+      });
+      arr1.forEach((ele, index) => {
+        if (ele == num) {
+          if (arr1[index + 1] != undefined) {
+            const td = (arr1[index + 1] + '')[0];
+            data[+td]++;
+          }
+        }
+      });
+      arr2.forEach((ele, index) => {
+        if (ele == num) {
+          if (arr2[index + 1] != undefined) {
+            const td = (arr2[index + 1] + '')[0];
+            data[+td]++;
+          }
+        }
+      });
+      return data;
+    }
+   }
 }
 </script>
 
@@ -547,5 +505,14 @@ a {
 .el-image__inner{
     width: 100%;
     height: 100%;
+}
+.numbertable {
+  width: 100%;
+  height: 50%;
+}
+.bars{
+  float: left;
+  height: 100%;
+  width: 33%;
 }
 </style>

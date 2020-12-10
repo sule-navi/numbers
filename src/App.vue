@@ -2,7 +2,7 @@
  * @Author: Sule
  * @Date: 2020-04-13 14:12:11
  * @LastEditors: Sule
- * @LastEditTime: 2020-04-13 14:51:49
+ * @LastEditTime: 2020-12-10 14:03:02
  * @Description:
  -->
 <template>
@@ -12,8 +12,13 @@
 </template>
 
 <script>
+import auth from "@/utils/auth";
 export default {
-  name: 'App'
+  name: 'App',
+  beforeDestroy() {
+    // 页面注销时 用户信息清空防止后续通过路由进入还能用
+    auth.setSessionStorage("isLogin", false);
+  },
 }
 </script>
 
@@ -30,7 +35,7 @@ body,
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: #f3e2d8;
+    background-color: #fbbc52;
 }
 
 /* 滚动条 */
