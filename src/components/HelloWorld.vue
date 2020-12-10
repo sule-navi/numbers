@@ -2,7 +2,7 @@
  * @Author: Sule
  * @Date: 2020-04-13 14:12:11
  * @LastEditors: Sule
- * @LastEditTime: 2020-12-10 15:53:57
+ * @LastEditTime: 2020-12-10 16:50:11
  * @Description:
  -->
 <template>
@@ -43,7 +43,7 @@ export default {
     }
   },
   created() {
-    this.user = auth.getSessionStorage('user');
+    this.user = auth.getLocalStorage('user');
     this.nums = auth.getLocalStorage("nums", this.user) || [];
     const arr = this.nums.concat().reverse();
     this.viewnums = arr.slice(0, 100);

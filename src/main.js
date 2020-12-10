@@ -38,7 +38,7 @@ new Vue({
  */
 router.beforeEach((to, from, next) => {
   if (to.path.indexOf('list')) {
-    const isLogin = auth.getSessionStorage('isLogin');
+    const isLogin = auth.getLocalStorage('isLogin');
     if (isLogin) {
       next();
     } else {

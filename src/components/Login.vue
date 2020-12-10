@@ -60,8 +60,8 @@ export default {
      */
     submitForm() {
       if (this.param.password === 'admin1234' && ['admin', 'd1', 'd2', 'd3'].includes(this.param.username)) {
-        auth.setSessionStorage("isLogin", true);
-        auth.setSessionStorage("user", this.param.username);
+        auth.setLocalStorage("isLogin", true);
+        auth.setLocalStorage("user", this.param.username);
         this.$message.success("登录成功");
           this.$router.push({
             path: "/list"
