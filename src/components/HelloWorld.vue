@@ -2,7 +2,7 @@
  * @Author: Sule
  * @Date: 2020-04-13 14:12:11
  * @LastEditors: Sule
- * @LastEditTime: 2020-12-10 15:19:48
+ * @LastEditTime: 2020-12-10 15:53:57
  * @Description:
  -->
 <template>
@@ -12,7 +12,7 @@
       <h5 style="text-align: center;margin-top: 5px;font-weight: normal;">author: sure</h5>
       <div style="position: fixed;right: 40px;z-index: 99;">
          <el-input-number v-model="num" controls-position="right" :min="0" :max="9" style="width: 110px;"></el-input-number>
-        <el-button type="primary" @click.enter="changeNumber">Push</el-button>
+        <el-button type="primary" @click="changeNumber">Push</el-button>
         <el-button type="danger" @click="Delete">Delete Last</el-button>
       </div>
     </el-header>
