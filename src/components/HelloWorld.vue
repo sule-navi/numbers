@@ -2,7 +2,7 @@
  * @Author: Sule
  * @Date: 2020-04-13 14:12:11
  * @LastEditors: Sule
- * @LastEditTime: 2020-12-10 14:36:08
+ * @LastEditTime: 2020-12-10 15:19:48
  * @Description:
  -->
 <template>
@@ -50,7 +50,7 @@ export default {
     this.viewnums200 = arr.slice(0, 200);
     this.viewnums.reverse();
     this.viewnums200.reverse();
-    this.num1 = this.viewnums[this.viewnums.length - 1] + '';
+    this.num1 = this.viewnums.length ? this.viewnums[this.viewnums.length - 1] + '' : "";
     this.num2 = this.viewnums.length > 1 ? this.viewnums[this.viewnums.length - 2] + '' + this.viewnums[this.viewnums.length - 1] : "";
     this.num3 = this.viewnums.length > 2 ? this.viewnums[this.viewnums.length - 3] + '' + this.viewnums[this.viewnums.length - 2] + '' + this.viewnums[this.viewnums.length - 1] : '';
   },
@@ -77,7 +77,7 @@ export default {
        this.viewnums.reverse();
        this.viewnums200.reverse();
        auth.setLocalStorage("nums", this.nums, this.user);
-       this.num1 = this.viewnums[this.viewnums.length - 1] + '';
+       this.num1 = this.viewnums.length ? this.viewnums[this.viewnums.length - 1] + '' : "";
        this.num2 = this.viewnums.length > 1 ? this.viewnums[this.viewnums.length - 2] + '' + this.viewnums[this.viewnums.length - 1] : "";
        this.num3 = this.viewnums.length > 2 ? this.viewnums[this.viewnums.length - 3] + '' + this.viewnums[this.viewnums.length - 2] + '' + this.viewnums[this.viewnums.length - 1] : '';
        this.drawLine();
