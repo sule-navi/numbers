@@ -2,7 +2,7 @@
  * @Author: Sule
  * @Date: 2020-04-13 14:12:11
  * @LastEditors: Sule
- * @LastEditTime: 2020-12-10 16:53:00
+ * @LastEditTime: 2020-12-15 15:22:38
  * @Description:
  -->
 <template>
@@ -35,7 +35,7 @@ body,
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: #fbbc52;
+    /* background-color: #3b425e; */
 }
 
 /* 滚动条 */

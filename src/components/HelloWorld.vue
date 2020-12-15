@@ -2,7 +2,7 @@
  * @Author: Sule
  * @Date: 2020-04-13 14:12:11
  * @LastEditors: Sule
- * @LastEditTime: 2020-12-10 16:50:11
+ * @LastEditTime: 2020-12-15 15:25:12
  * @Description:
  -->
 <template>
@@ -46,7 +46,7 @@ export default {
     this.user = auth.getLocalStorage('user');
     this.nums = auth.getLocalStorage("nums", this.user) || [];
     const arr = this.nums.concat().reverse();
-    this.viewnums = arr.slice(0, 100);
+    this.viewnums = arr.slice(0, 150);
     this.viewnums200 = arr.slice(0, 200);
     this.viewnums.reverse();
     this.viewnums200.reverse();
@@ -72,7 +72,7 @@ export default {
         }).then(() => {
           this.nums.pop();
        const arr = this.nums.concat().reverse();
-       this.viewnums = arr.slice(0, 100);
+       this.viewnums = arr.slice(0, 150);
        this.viewnums200 = arr.slice(0, 200);
        this.viewnums.reverse();
        this.viewnums200.reverse();
@@ -93,7 +93,7 @@ export default {
          this.nums.shift();
        }
        const arr = this.nums.concat().reverse();
-       this.viewnums = arr.slice(0, 100);
+       this.viewnums = arr.slice(0, 150);
        this.viewnums200 = arr.slice(0, 200);
        this.viewnums.reverse();
        this.viewnums200.reverse();
@@ -109,10 +109,10 @@ export default {
      },
     drawLine() {
         // 基于准备好的dom，初始化echarts实例
-        let myChart = this.$echarts(document.getElementById('numbertable'))
+        let myChart = this.$echarts(document.getElementById('numbertable'), 'light')
         // 绘制图表
         myChart.setOption({
-            title: { text: '近100轮' },
+            title: { text: '近150轮' },
             tooltip: {
               trigger: 'axis',
               axisPointer: {
@@ -139,6 +139,7 @@ export default {
                 name: '本轮',
                 type: 'line',
                 data: this.viewnums,
+                color: ['#0960e2','#759aa0','#e69d87','#8dc1a9','#ea7e53','#eedd78','#73a373','#73b9bc','#7289ab', '#91ca8c','#f49f42'],
                 label: {
                 normal: {
                     show: true,
